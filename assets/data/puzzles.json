@@ -1,0 +1,602 @@
+[
+  {
+    "puzzle": "⛏️🛠️",
+    "answer": "Minecraft",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "📞🎖️",
+    "answer": "Call of Duty",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "👵🦹‍♂️🚗",
+    "answer": "Grand Theft Auto",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧑‍🚀🔍🧑‍🚀",
+    "answer": "Among Us",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "📜🧝‍♀️",
+    "answer": "The Legend of Zelda",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🧓💍",
+    "answer": "Elden Ring",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🛐⚔️",
+    "answer": "God of War",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "😇⭕",
+    "answer": "Halo",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🔴⚪️🐾",
+    "answer": "Pokemon",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🐾🚸",
+    "answer": "Animal Crossing",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🏆📜",
+    "answer": "League of Legends",
+    "Category": ["Game"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "🧮💥",
+    "answer": "Counter-Strike",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "⬆️⌚",
+    "answer": "Overwatch",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🚀⚽",
+    "answer": "Rocket League",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⛰️🐉",
+    "answer": "Skyrim",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🔴💀🙏",
+    "answer": "Red Dead Redemption",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "👾🌆",
+    "answer": "Cyberpunk 2077",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "⛰️🔺👑",
+    "answer": "Apex Legends",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🍬💥📖",
+    "answer": "Candy Crush Saga",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⚔️🏘️",
+    "answer": "Clash of Clans",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🟦🟧🟩🧩",
+    "answer": "Tetris",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🟡🍪",
+    "answer": "Pac-Man",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "😈🔥",
+    "answer": "Doom",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⭕➡️⭕",
+    "answer": "Portal",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⭐🌾",
+    "answer": "Starfield",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🛣️🥊",
+    "answer": "Street Fighter",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🏠🧟‍♂️",
+    "answer": "Resident Evil",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🗡️🦅",
+    "answer": "Assassin's Creed",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🔥🛡️",
+    "answer": "Fire Emblem",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🦑🎨",
+    "answer": "Splatoon",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🔩⚙️🪨",
+    "answer": "Metal Gear Solid",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🏁✨",
+    "answer": "Final Fantasy",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "👾🏹",
+    "answer": "Monster Hunter",
+    "Category": ["Game"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🍄🏎️",
+    "answer": "Mario Kart",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🔵🦔",
+    "answer": "Sonic the Hedgehog",
+    "Category": ["Game"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🚢🧊",
+    "answer": "Titanic",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⭐⚔️",
+    "answer": "Star Wars",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🦖🌳",
+    "answer": "Jurassic Park",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🟩🕶️",
+    "answer": "The Matrix",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🛌🌀🛌",
+    "answer": "Inception",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🟦👤",
+    "answer": "Avatar",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "❄️👸",
+    "answer": "Frozen",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧸📖",
+    "answer": "Toy Story",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🎈🏠",
+    "answer": "Up",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🔙⏰🚗",
+    "answer": "Back to the Future",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🦈🦷",
+    "answer": "Jaws",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🌑🦇",
+    "answer": "The Dark Knight",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🕷️🧑",
+    "answer": "Spider-Man",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧲👨",
+    "answer": "Iron Man",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "⚫🐆",
+    "answer": "Black Panther",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🛐👨‍👦",
+    "answer": "The Godfather",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🍊📖",
+    "answer": "Pulp Fiction",
+    "Category": ["Movie"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "🌳🏃‍♂️",
+    "answer": "Forrest Gump",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🦸‍♂️🦸‍♀️",
+    "answer": "The Avengers",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🛡️🌌",
+    "answer": "Guardians of the Galaxy",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🔎🐠",
+    "answer": "Finding Nemo",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧜‍♀️🐚",
+    "answer": "The Little Mermaid",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "👸➕👹",
+    "answer": "Beauty and the Beast",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧞‍♂️🪔",
+    "answer": "Aladdin",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⛓️➡️🕊️",
+    "answer": "The Shawshank Redemption",
+    "Category": ["Movie"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "⭐↔️⭐",
+    "answer": "Interstellar",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🤬🧔‍♂️🔥🛣️",
+    "answer": "Mad Max: Fury Road",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🃏😈",
+    "answer": "Joker",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🎶🎶🌆",
+    "answer": "La La Land",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🪱🏠",
+    "answer": "Parasite",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🍽️🏹",
+    "answer": "The Hunger Games",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🦇👤",
+    "answer": "The Batman",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🏜️🌬️",
+    "answer": "Dune",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "✈️🔝",
+    "answer": "Top Gun",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧙‍♂️💍🔥",
+    "answer": "The Lord of the Rings",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "😈👤",
+    "answer": "Bad Guy",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🚫👀💡",
+    "answer": "Blinding Lights",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🧩🫵",
+    "answer": "Shape of You",
+    "Category": ["Song"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🌀🌊",
+    "answer": "Rolling in the Deep",
+    "Category": ["Song"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "⬆️🏙️🎺",
+    "answer": "Uptown Funk",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🎨🎶",
+    "answer": "Bohemian Rhapsody",
+    "Category": ["Song"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "🏨🌴🌅",
+    "answer": "Hotel California",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🍬👶🎸",
+    "answer": "Sweet Child O' Mine",
+    "Category": ["Song"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "👃🧒✨",
+    "answer": "Smells Like Teen Spirit",
+    "Category": ["Song"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🪜⬆️☁️",
+    "answer": "Stairway to Heaven",
+    "Category": ["Song"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🌕🧟‍♂️",
+    "answer": "Thriller",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "👐🐝",
+    "answer": "Let It Be",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "👤👍🫵",
+    "answer": "Someone Like You",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🏘️🛣️",
+    "answer": "Old Town Road",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🌞🌻",
+    "answer": "Sunflower",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🕺❤️",
+    "answer": "Stayin' Alive",
+    "Category": ["Song"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "💃👑",
+    "answer": "Dancing Queen",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🙋‍♀️💪",
+    "answer": "I Will Survive",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "📞🧑❓",
+    "answer": "Call Me Maybe",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "📻☢️",
+    "answer": "Radioactive",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "💡💎",
+    "answer": "Chandelier",
+    "Category": ["Song"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🏗️⚫",
+    "answer": "Wrecking Ball",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🐌🎵",
+    "answer": "Despacito",
+    "Category": ["Song"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "🃏😐",
+    "answer": "Poker Face",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🤝💨",
+    "answer": "Shake It Off",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "⬜✍️",
+    "answer": "Blank Space",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "👎❤️",
+    "answer": "Bad Romance",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🔥🎆",
+    "answer": "Firework",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "👋☎️",
+    "answer": "Hello",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "1️⃣👩",
+    "answer": "Single Ladies",
+    "Category": ["Song"],
+    "difficulty": "Easy"
+  }
+]
