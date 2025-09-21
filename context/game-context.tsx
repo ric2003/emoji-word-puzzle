@@ -38,7 +38,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
   });
   const [settings, setSettings] = useState<GameSettings>({
     autoAdvance: true,
-    autoShowHint: false,
+    autoShowHint: true,
   });
 
   const updateForResult = useCallback((correct: boolean) => {

@@ -129,17 +129,33 @@ export default function PlayScreen() {
     if (settings.autoShowHint && !hintRequested) setHintRequested(true);
   }, [settings.autoShowHint]);
 
-  const maskText = useMemo(() => {
+  const patternText = useMemo(() => {
     if (!words.length) return "";
-    return words
-      .map((w, i) =>
-        w
-          .split("")
-          .map((ch, j) => (revealMap[i] && revealMap[i][j] ? ch : "_"))
-          .join("")
-      )
-      .join(" ");
-  }, [words, revealMap]);
+    const raw = puzzle.answer;
+    let wordIndex = 0;
+    let charIndex = 0;
+    const out: string[] = [];
+    for (let k = 0; k < raw.length; k++) {
+      const ch = raw[k];
+      if (/[A-Za-z0-9]/.test(ch)) {
+        const revealed = !!revealMap[wordIndex]?.[charIndex];
+        out.push(revealed ? ch : "_");
+        charIndex++;
+        if (charIndex >= (words[wordIndex]?.length ?? 0)) {
+          wordIndex++;
+          charIndex = 0;
+        }
+      } else if (ch === "-") {
+        out.push("-");
+      } else if (/\s/.test(ch)) {
+        out.push(" ");
+      } else {
+        // Other punctuation shown as space to avoid confusion
+        out.push(" ");
+      }
+    }
+    return out.join("");
+  }, [puzzle.answer, words, revealMap]);
 
   function revealWordsFromGuessIfAny(userGuess: string) {
     const guessWords = userGuess
@@ -316,13 +332,17 @@ export default function PlayScreen() {
       {!hintRequested ? (
         <>
           <TouchableOpacity onPress={() => setHintRequested(true)}>
-            <ThemedView style={styles.revealBtn}>
+            <ThemedView
+              style={[styles.revealBtn, { borderColor: Colors[scheme].icon }]}
+            >
               <ThemedText type="defaultSemiBold">Ask for hint</ThemedText>
             </ThemedView>
           </TouchableOpacity>
         </>
       ) : (
-        <ThemedView style={styles.hintPanel}>
+        <ThemedView
+          style={[styles.hintPanel, { borderColor: Colors[scheme].icon }]}
+        >
           <ThemedView style={styles.hintList}>
             <ThemedText>
               Category:{" "}
@@ -333,7 +353,7 @@ export default function PlayScreen() {
                 <ThemedText>
                   {" "}
                   <ThemedText type="defaultSemiBold" style={styles.pattern}>
-                    {maskText}
+                    {patternText}
                   </ThemedText>
                 </ThemedText>
               )}
@@ -579,35 +599,32 @@ const styles = StyleSheet.create({
   },
   feedbackOverlay: {
     position: "absolute",
-    top: undefined,
-    bottom: "50%",
+    bottom: "60%",
     left: 0,
     right: 0,
-    paddingTop: 0,
     alignItems: "center",
     pointerEvents: "box-none",
   },
   feedbackCard: {
-    borderRadius: 12,
+    borderRadius: 16,
     borderWidth: 1,
-    paddingHorizontal: 16,
-    paddingVertical: 12,
-    shadowColor: "#000",
+    paddingHorizontal: 32,
+    paddingVertical: 16,
     shadowOpacity: 0.2,
     shadowRadius: 10,
-    elevation: 6,
+    elevation: 10,
   },
   feedbackSuccess: {
     borderColor: "#22C55E",
-    backgroundColor: "rgba(34,197,94,0.1)",
+    backgroundColor: "rgba(34,197,94,0.8)",
   },
   feedbackError: {
     borderColor: "#EF4444",
-    backgroundColor: "rgba(239,68,68,0.1)",
+    backgroundColor: "rgba(239,68,68,0.8)",
   },
   feedbackNear: {
     borderColor: "#F59E0B",
-    backgroundColor: "rgba(245,158,11,0.1)",
+    backgroundColor: "rgba(245,158,11,0.8)",
   },
   nextBtn: {
     marginTop: 4,
