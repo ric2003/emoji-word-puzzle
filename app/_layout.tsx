@@ -4,6 +4,7 @@ import {
   ThemeProvider,
 } from "@react-navigation/native";
 import { Stack } from "expo-router";
+import Head from "expo-router/head";
 import { StatusBar } from "expo-status-bar";
 import "react-native-reanimated";
 
@@ -26,6 +27,24 @@ export default function RootLayout() {
         backgroundColor: Colors[colorScheme ?? "light"].background,
       }}
     >
+      <Head>
+        <meta name="color-scheme" content="light dark" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content={Colors.light.background}
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content={Colors.dark.background}
+        />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+          name="apple-mobile-web-app-status-bar-style"
+          content="black-translucent"
+        />
+      </Head>
       <ThemeProvider value={colorScheme === "dark" ? DarkTheme : DefaultTheme}>
         <GameProvider>
           <Stack
@@ -60,7 +79,7 @@ export default function RootLayout() {
               options={{ presentation: "modal", title: "Modal" }}
             />
           </Stack>
-          <StatusBar style="auto" />
+          <StatusBar style={colorScheme === "dark" ? "light" : "dark"} />
         </GameProvider>
       </ThemeProvider>
     </SafeAreaProvider>
