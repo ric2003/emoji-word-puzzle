@@ -46,14 +46,25 @@ export default function RootLayout() {
         />
         <meta
           name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content={Colors.light.background}
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content={Colors.dark.background}
+        />
+        <meta
+          name="theme-color"
           content={Colors[colorScheme ?? "light"].background}
         />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <style>{`
-          html, body { background-color: ${
-            Colors[colorScheme ?? "light"].background
-          }; }
+          html, body { background-color: ${Colors.light.background}; }
+          @media (prefers-color-scheme: dark) {
+            html, body { background-color: ${Colors.dark.background}; }
+          }
           body { min-height: 100vh; }
         `}</style>
       </Head>
