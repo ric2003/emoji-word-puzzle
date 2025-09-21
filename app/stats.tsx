@@ -22,7 +22,6 @@ export default function StatsScreen() {
         { paddingTop: insets.top + 8, paddingBottom: insets.bottom + 8 },
       ]}
     >
-      <ThemedText type="title">Stats</ThemedText>
       <ThemedView style={styles.card}>
         <ThemedText>Total guesses: {stats.totalGuesses}</ThemedText>
         <ThemedText>Correct: {stats.correctCount}</ThemedText>
@@ -62,6 +61,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 12,
     padding: 16,
+    marginBottom: 16,
   },
   row: {
     flexDirection: "row",
@@ -70,7 +70,8 @@ const styles = StyleSheet.create({
   },
   resetBtn: {
     marginTop: 12,
-    borderWidth: 1,
+    borderWidth: 2,
+    borderColor: "red",
     borderRadius: 10,
     paddingHorizontal: 12,
     paddingVertical: 12,

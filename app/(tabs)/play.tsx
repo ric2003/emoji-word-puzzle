@@ -21,7 +21,13 @@ import { Colors, Fonts } from "@/constants/theme";
 import { useGame } from "@/context/game-context";
 import { useColorScheme } from "@/hooks/use-color-scheme";
 import { isMatch } from "@/utils/answer";
-import { getRandomPuzzle, type Puzzle } from "@/utils/puzzles";
+import {
+  getPuzzleAt,
+  getRandomPuzzle,
+  markIndexSeen,
+  pickUnseenIndex,
+  type Puzzle,
+} from "@/utils/puzzles";
 import { Link } from "expo-router";
 
 export default function PlayScreen() {
@@ -29,6 +35,7 @@ export default function PlayScreen() {
   const insets = useSafeAreaInsets();
   const { updateForResult, settings } = useGame();
   const [puzzle, setPuzzle] = useState<Puzzle>(() => getRandomPuzzle());
+  const currentIndexRef = useRef<number | null>(null);
   const [guess, setGuess] = useState("");
   const [feedback, setFeedback] = useState<
     "idle" | "near" | "correct" | "wrong"
@@ -71,6 +78,20 @@ export default function PlayScreen() {
     }, 1000);
     return () => clearTimeout(timer);
   }, [feedback, settings.autoAdvance]);
+
+  // Load a unique puzzle on mount (do not mark as seen yet)
+  useEffect(() => {
+    let cancelled = false;
+    (async () => {
+      const idx = await pickUnseenIndex();
+      if (cancelled) return;
+      currentIndexRef.current = idx;
+      setPuzzle(getPuzzleAt(idx));
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   const difficultyColor = useMemo(() => {
     switch (puzzle.difficulty) {
@@ -159,6 +180,9 @@ export default function PlayScreen() {
       if (process.env.EXPO_OS === "ios")
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
       Keyboard.dismiss();
+      // Mark current puzzle as seen on success
+      if (currentIndexRef.current != null)
+        markIndexSeen(currentIndexRef.current);
     } else if (near) {
       setFeedback("near");
       if (process.env.EXPO_OS === "ios")
@@ -204,8 +228,29 @@ export default function PlayScreen() {
     }
   }
 
-  function onNext() {
-    setPuzzle(getRandomPuzzle());
+  async function onNext() {
+    // If we are advancing after a guess (correct or wrong), mark as seen only if correct
+    // Note: wrong guesses don't mark as seen to allow it to reappear later
+    const idx = await pickUnseenIndex(
+      currentIndexRef.current != null ? [currentIndexRef.current] : undefined
+    );
+    currentIndexRef.current = idx;
+    setPuzzle(getPuzzleAt(idx));
+    setGuess("");
+    setFeedback("idle");
+    setHintRequested(false);
+    setWrongSinceHint(0);
+    setPendingNext(false);
+    inputRef.current?.focus();
+  }
+
+  // Explicit Skip action: load another unseen puzzle but don't mark current as seen
+  async function onSkip() {
+    const idx = await pickUnseenIndex(
+      currentIndexRef.current != null ? [currentIndexRef.current] : undefined
+    );
+    currentIndexRef.current = idx;
+    setPuzzle(getPuzzleAt(idx));
     setGuess("");
     setFeedback("idle");
     setHintRequested(false);
@@ -229,22 +274,33 @@ export default function PlayScreen() {
           Guess it!
         </ThemedText>
         <ThemedView style={styles.headerRight}>
-          <ThemedView
-            style={[styles.difficultyPill, { borderColor: difficultyColor }]}
-          >
-            <ThemedText style={{ color: difficultyColor }}>
-              {puzzle.difficulty}
-            </ThemedText>
-          </ThemedView>
           <Link href="/stats" asChild>
-            <TouchableOpacity accessibilityLabel="Open stats">
+            <TouchableOpacity
+              accessibilityLabel="Open stats"
+              accessibilityHint="Opens your gameplay statistics"
+              accessibilityRole="button"
+              hitSlop={{ top: 10, bottom: 10, left: 10, right: 10 }}
+              style={styles.statsBtn}
+            >
               <IconSymbol
                 name="chart.bar.fill"
-                size={22}
+                size={28}
                 color={Colors[scheme].text}
               />
+              <ThemedText type="defaultSemiBold">Stats</ThemedText>
             </TouchableOpacity>
           </Link>
+        </ThemedView>
+      </ThemedView>
+
+      {/* Difficulty pill above emoji card */}
+      <ThemedView style={styles.difficultyContainer}>
+        <ThemedView
+          style={[styles.difficultyPill, { borderColor: difficultyColor }]}
+        >
+          <ThemedText style={{ color: difficultyColor }}>
+            {puzzle.difficulty}
+          </ThemedText>
         </ThemedView>
       </ThemedView>
 
@@ -277,7 +333,7 @@ export default function PlayScreen() {
               {words.length > 0 &&
                 (settings.autoShowHint || wrongSinceHint >= 1) && (
                   <ThemedText>
-                    Answer pattern:{" "}
+                    {" "}
                     <ThemedText type="defaultSemiBold" style={styles.pattern}>
                       {maskText}
                     </ThemedText>
@@ -310,13 +366,20 @@ export default function PlayScreen() {
             </ThemedView>
           </TouchableOpacity>
         ) : (
-          <TouchableOpacity onPress={onSubmit} disabled={!guess.trim()}>
-            <ThemedView
-              style={[styles.cta, { opacity: guess.trim() ? 1 : 0.5 }]}
-            >
-              <ThemedText type="defaultSemiBold">Guess</ThemedText>
-            </ThemedView>
-          </TouchableOpacity>
+          <>
+            <TouchableOpacity onPress={onSkip}>
+              <ThemedView style={styles.secondaryCta}>
+                <ThemedText type="defaultSemiBold">Skip</ThemedText>
+              </ThemedView>
+            </TouchableOpacity>
+            <TouchableOpacity onPress={onSubmit} disabled={!guess.trim()}>
+              <ThemedView
+                style={[styles.cta, { opacity: guess.trim() ? 1 : 0.5 }]}
+              >
+                <ThemedText type="defaultSemiBold">Guess</ThemedText>
+              </ThemedView>
+            </TouchableOpacity>
+          </>
         )}
       </ThemedView>
 
@@ -358,11 +421,34 @@ const styles = StyleSheet.create({
     alignItems: "center",
     gap: 12,
   },
+  statsBtn: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: 8,
+    minHeight: 44,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+  tapTarget: {
+    minWidth: 44,
+    minHeight: 44,
+    padding: 8,
+    borderRadius: 10,
+    alignItems: "center",
+    justifyContent: "center",
+  },
   difficultyPill: {
     borderWidth: 1,
     paddingHorizontal: 10,
     paddingVertical: 6,
     borderRadius: 999,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  difficultyContainer: {
+    alignItems: "center",
   },
   emojiCard: {
     alignItems: "center",
@@ -401,9 +487,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 12,
     padding: 12,
+    alignItems: "center",
   },
   hintList: {
     gap: 4,
+    alignItems: "center",
   },
   pattern: {
     fontFamily: Fonts.mono,
@@ -430,6 +518,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
   },
   cta: {
+    paddingHorizontal: 16,
+    paddingVertical: 12,
+    borderRadius: 10,
+    borderWidth: 1,
+  },
+  secondaryCta: {
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 10,

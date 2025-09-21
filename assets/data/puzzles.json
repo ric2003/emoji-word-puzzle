@@ -584,583 +584,583 @@
   {
     "puzzle": "4🌙",
     "answer": "Fortnite",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🔚🇺🇸",
     "answer": "The Last of Us",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🐺🗡️3️⃣🌲🏹",
     "answer": "The Witcher 3: Wild Hunt",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🌄0️⃣🌅",
     "answer": "Horizon Zero Dawn",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "👻🇯🇵🏝️",
     "answer": "Ghost of Tsushima",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🗺️❌",
     "answer": "Uncharted",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🍂⬇️",
     "answer": "Fallout",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🌓🧬",
     "answer": "Half-Life",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🧬⚡",
     "answer": "BioShock",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "😈🗡️",
     "answer": "Diablo",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "⭐🚀",
     "answer": "StarCraft",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🌍⚔️🛠️",
     "answer": "World of Warcraft",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🛡️🏛️2️⃣",
     "answer": "Dota 2",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🌑👻",
     "answer": "Dark Souls",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🩸👶",
     "answer": "Bloodborne",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🎭5️⃣",
     "answer": "Persona 5",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "⏱️🔫",
     "answer": "Chrono Trigger",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "👑❤️",
     "answer": "Kingdom Hearts",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🏠👨‍👩‍👧",
     "answer": "The Sims",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🧪🏙️",
     "answer": "SimCity",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🏛️🌍6️⃣",
     "answer": "Civilization VI",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🏁🚗",
     "answer": "Gran Turismo",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🛣️⚡",
     "answer": "Need for Speed",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🥋💀",
     "answer": "Mortal Kombat",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🛡️🐜",
     "answer": "Valorant",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "⛏️🌿",
     "answer": "Terraria",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🕳️🛡️",
     "answer": "Hollow Knight",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "☕👤",
     "answer": "Cuphead",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "⭐🌾🏞️",
     "answer": "Stardew Valley",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "⭕➡️⭕2️⃣",
     "answer": "Portal 2",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "⭐💥👬",
     "answer": "Super Smash Bros.",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🍄🧢🌍",
     "answer": "Super Mario Odyssey",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🍌🦍",
     "answer": "Donkey Kong",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "📄🍄",
     "answer": "Paper Mario",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🎒🗡️💨🌿",
     "answer": "The Legend of Zelda: Breath of the Wild",
-    "hints": ["Game"],
+    "Category": ["Game"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🟦👤🌊",
     "answer": "Avatar: The Way of Water",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🦸‍♂️🦸‍♀️🔚🎮",
     "answer": "Avengers: Endgame",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🦖🌍",
     "answer": "Jurassic World",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "❄️👸2️⃣",
     "answer": "Frozen II",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🧸📖3️⃣",
     "answer": "Toy Story 3",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🛐👨‍👦2️⃣",
     "answer": "The Godfather Part II",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🧙‍♂️💍🔙👑",
     "answer": "The Return of the King",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🕷️🧑🚫🏠",
     "answer": "Spider-Man: No Way Home",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "⚫🐆♾️",
     "answer": "Black Panther: Wakanda Forever",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "✈️🕶️🧑‍✈️",
     "answer": "Top Gun: Maverick",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "⭐⚔️⏰",
     "answer": "Star Wars: The Force Awakens",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🏛️⚔️🔙",
     "answer": "The Empire Strikes Back",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🎀👱‍♀️",
     "answer": "Barbie",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "💣🧑‍🔬",
     "answer": "Oppenheimer",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🧠🔄",
     "answer": "Inside Out",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🍄🧔🎬",
     "answer": "The Super Mario Bros. Movie",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🦸‍♂️🦸‍♀️♾️⚔️",
     "answer": "Avengers: Infinity War",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "👹🌿",
     "answer": "Shrek",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "👨‍👩‍👧‍👦🦸",
     "answer": "The Incredibles",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "👹🏢",
     "answer": "Monsters, Inc.",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "👧🌊",
     "answer": "Moana",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "💀🎸",
     "answer": "Coco",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🐀👨‍🍳",
     "answer": "Ratatouille",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🤖🗑️",
     "answer": "WALL·E",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🏴‍☠️🌊🏝️",
     "answer": "Pirates of the Caribbean",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "👽📞🏠",
     "answer": "E.T. the Extra-Terrestrial",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "👻🚫",
     "answer": "Ghostbusters",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🤖2️⃣⚖️",
     "answer": "Terminator 2: Judgment Day",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🕵️‍♂️💣",
     "answer": "Mission: Impossible",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🥊⛰️",
     "answer": "Rocky",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🤫🐑",
     "answer": "The Silence of the Lambs",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🤠🗺️📦",
     "answer": "Raiders of the Lost Ark",
-    "hints": ["Movie"],
+    "Category": ["Movie"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "💵👖",
     "answer": "Billie Jean",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "💭🌍",
     "answer": "Imagine",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "❤️♾️🫵",
     "answer": "I Will Always Love You",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "7️⃣🌎🪖",
     "answer": "Seven Nation Army",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "✋➡️👤",
     "answer": "Take On Me",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🤔🧱",
     "answer": "Wonderwall",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🌍🦒",
     "answer": "Africa",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🙌✨",
     "answer": "Hallelujah",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🫵➡️⛪",
     "answer": "Take Me to Church",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "😊🎶",
     "answer": "Happy",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🔎❤️",
     "answer": "We Found Love",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "💃🌑",
     "answer": "Dancing in the Dark",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🥁➡️",
     "answer": "Beat It",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "👋🧔",
     "answer": "Hey Jude",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🌀🫵",
     "answer": "Lose Yourself",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🟣🌧️",
     "answer": "Purple Rain",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🎨⬛",
     "answer": "Paint It Black",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🔙⬛",
     "answer": "Back in Black",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🇺🇸🥧",
     "answer": "American Pie",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🔵📅",
     "answer": "Blue Monday",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🍓🌾♾️",
     "answer": "Strawberry Fields Forever",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "🚫👩🚫😭",
     "answer": "No Woman, No Cry",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "🤪❤️",
     "answer": "Crazy in Love",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🎄🎁🫵",
     "answer": "All I Want for Christmas Is You",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "🧟‍♂️🎶",
     "answer": "Zombie",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "☠️🧪",
     "answer": "Toxic",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "👔🌞➡️",
     "answer": "Mr. Brightside",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Hard"
   },
   {
     "puzzle": "👎🩸",
     "answer": "Bad Blood",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   },
   {
     "puzzle": "⚡😮",
     "answer": "Thunderstruck",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Medium"
   },
   {
     "puzzle": "✨⬆️",
     "answer": "Levitating",
-    "hints": ["Song"],
+    "Category": ["Song"],
     "difficulty": "Easy"
   }
 ]
