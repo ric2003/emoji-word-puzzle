@@ -16,12 +16,7 @@ export default function StatsScreen() {
       : 0;
 
   return (
-    <ThemedView
-      style={[
-        styles.container,
-        { paddingTop: insets.top + 8, paddingBottom: insets.bottom + 8 },
-      ]}
-    >
+    <ThemedView style={[styles.container]}>
       <ThemedView style={styles.card}>
         <ThemedText>Total guesses: {stats.totalGuesses}</ThemedText>
         <ThemedText>Correct: {stats.correctCount}</ThemedText>

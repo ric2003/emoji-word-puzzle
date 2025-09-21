@@ -313,45 +313,52 @@ export default function PlayScreen() {
         </ThemedText>
       </Animated.View>
 
-      <ThemedView style={styles.hintPanel}>
-        <ThemedText type="defaultSemiBold">Hints</ThemedText>
-        {!hintRequested ? (
-          <>
-            <TouchableOpacity onPress={() => setHintRequested(true)}>
-              <ThemedView style={styles.revealBtn}>
-                <ThemedText type="defaultSemiBold">Ask for hint</ThemedText>
-              </ThemedView>
-            </TouchableOpacity>
-          </>
-        ) : (
-          <>
-            <ThemedView style={styles.hintList}>
-              <ThemedText>
-                Category:{" "}
-                <ThemedText type="defaultSemiBold">{categoryLabel}</ThemedText>
-              </ThemedText>
-              {words.length > 0 &&
-                (settings.autoShowHint || wrongSinceHint >= 1) && (
-                  <ThemedText>
-                    {" "}
-                    <ThemedText type="defaultSemiBold" style={styles.pattern}>
-                      {maskText}
-                    </ThemedText>
-                  </ThemedText>
-                )}
+      {!hintRequested ? (
+        <>
+          <TouchableOpacity onPress={() => setHintRequested(true)}>
+            <ThemedView style={styles.revealBtn}>
+              <ThemedText type="defaultSemiBold">Ask for hint</ThemedText>
             </ThemedView>
-          </>
-        )}
-      </ThemedView>
+          </TouchableOpacity>
+        </>
+      ) : (
+        <ThemedView style={styles.hintPanel}>
+          <ThemedView style={styles.hintList}>
+            <ThemedText>
+              Category:{" "}
+              <ThemedText type="defaultSemiBold">{categoryLabel}</ThemedText>
+            </ThemedText>
+            {words.length > 0 &&
+              (settings.autoShowHint || wrongSinceHint >= 1) && (
+                <ThemedText>
+                  {" "}
+                  <ThemedText type="defaultSemiBold" style={styles.pattern}>
+                    {maskText}
+                  </ThemedText>
+                </ThemedText>
+              )}
+          </ThemedView>
+        </ThemedView>
+      )}
 
-      <ThemedView style={styles.inputRow}>
+      <ThemedView
+        style={[styles.controls, { borderColor: Colors[scheme].icon }]}
+      >
         <TextInput
           ref={inputRef}
           value={guess}
           onChangeText={setGuess}
           placeholder="Type your guess"
           placeholderTextColor={scheme === "light" ? "#9BA1A6" : "#687076"}
-          style={[styles.input, { color: Colors[scheme].text }]}
+          style={[
+            styles.input,
+            {
+              color: Colors[scheme].text,
+              borderBottomWidth: 0.5,
+              borderBottomColor: Colors[scheme].icon,
+              backgroundColor: Colors[scheme].background,
+            },
+          ]}
           selectionColor={Colors[scheme].tint}
           cursorColor={Colors[scheme].tint}
           onSubmitEditing={onSubmit}
@@ -359,28 +366,50 @@ export default function PlayScreen() {
           autoCapitalize="words"
           autoCorrect={false}
         />
-        {pendingNext ? (
-          <TouchableOpacity onPress={onNext}>
-            <ThemedView style={styles.cta}>
-              <ThemedText type="defaultSemiBold">Next</ThemedText>
-            </ThemedView>
-          </TouchableOpacity>
-        ) : (
-          <>
-            <TouchableOpacity onPress={onSkip}>
-              <ThemedView style={styles.secondaryCta}>
-                <ThemedText type="defaultSemiBold">Skip</ThemedText>
-              </ThemedView>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={onSubmit} disabled={!guess.trim()}>
+
+        <ThemedView style={styles.controlsButtonsRow}>
+          {pendingNext ? (
+            <TouchableOpacity onPress={onNext} style={{ flex: 1 }}>
               <ThemedView
-                style={[styles.cta, { opacity: guess.trim() ? 1 : 0.5 }]}
+                style={[styles.action, { borderTopColor: Colors[scheme].icon }]}
               >
-                <ThemedText type="defaultSemiBold">Guess</ThemedText>
+                <ThemedText type="defaultSemiBold">Next</ThemedText>
               </ThemedView>
             </TouchableOpacity>
-          </>
-        )}
+          ) : (
+            <>
+              <TouchableOpacity onPress={onSkip} style={{ flex: 1 }}>
+                <ThemedView
+                  style={[
+                    styles.action,
+                    { borderTopColor: Colors[scheme].icon },
+                  ]}
+                >
+                  <ThemedText type="defaultSemiBold">Skip</ThemedText>
+                </ThemedView>
+              </TouchableOpacity>
+              <TouchableOpacity
+                onPress={onSubmit}
+                disabled={!guess.trim()}
+                style={{ flex: 1 }}
+              >
+                <ThemedView
+                  style={[
+                    styles.action,
+                    styles.actionSplit,
+                    {
+                      opacity: guess.trim() ? 1 : 0.5,
+                      borderTopColor: Colors[scheme].icon,
+                      borderLeftColor: Colors[scheme].icon,
+                    },
+                  ]}
+                >
+                  <ThemedText type="defaultSemiBold">Guess</ThemedText>
+                </ThemedView>
+              </TouchableOpacity>
+            </>
+          )}
+        </ThemedView>
       </ThemedView>
 
       {feedback !== "idle" && (
@@ -466,12 +495,6 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     gap: 8,
   },
-  hintChip: {
-    borderRadius: 999,
-    borderWidth: 1,
-    paddingHorizontal: 10,
-    paddingVertical: 6,
-  },
   hintButton: {
     flexDirection: "row",
     alignItems: "center",
@@ -500,27 +523,46 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     borderWidth: 1,
     borderRadius: 10,
-    paddingHorizontal: 12,
-    paddingVertical: 8,
+    paddingVertical: 12,
+    alignItems: "center",
+    width: "100%",
   },
   inputRow: {
     flexDirection: "row",
     gap: 8,
     alignItems: "center",
+    width: "100%",
+  },
+  controls: {
+    borderWidth: 1,
+    borderRadius: 12,
+    overflow: "hidden",
+    width: "100%",
+  },
+  controlsButtonsRow: {
+    flexDirection: "row",
+  },
+  action: {
+    alignItems: "center",
+    justifyContent: "center",
+    minHeight: 48,
+  },
+  actionSplit: {
+    borderLeftWidth: 1,
   },
   input: {
-    flex: 1,
-    borderRadius: 10,
-    borderWidth: 1,
-    paddingHorizontal: 12,
-    paddingVertical: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 16,
     fontSize: 16,
+    minHeight: 16,
   },
   cta: {
     paddingHorizontal: 16,
     paddingVertical: 12,
     borderRadius: 10,
     borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
   },
   secondaryCta: {
     paddingHorizontal: 16,
