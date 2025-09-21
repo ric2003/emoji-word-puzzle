@@ -453,13 +453,12 @@ const styles = StyleSheet.create({
   emojiCard: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 32,
-    borderRadius: 12,
+    paddingBottom: 24,
   },
   emoji: {
-    fontSize: 48,
+    fontSize: 72,
     textAlign: "center",
-    lineHeight: 56,
+    lineHeight: 80,
   },
   hintsRow: {
     flexDirection: "row",
