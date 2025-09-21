@@ -15,6 +15,7 @@ export type GameStats = {
 
 export type GameSettings = {
   autoAdvance: boolean;
+  autoShowHint: boolean;
 };
 
 export type GameContextValue = {
@@ -23,6 +24,7 @@ export type GameContextValue = {
   updateForResult: (correct: boolean) => void;
   resetStats: () => void;
   setAutoAdvance: (value: boolean) => void;
+  setAutoShowHint: (value: boolean) => void;
 };
 
 const GameContext = createContext<GameContextValue | undefined>(undefined);
@@ -34,7 +36,10 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     currentStreak: 0,
     bestStreak: 0,
   });
-  const [settings, setSettings] = useState<GameSettings>({ autoAdvance: true });
+  const [settings, setSettings] = useState<GameSettings>({
+    autoAdvance: true,
+    autoShowHint: false,
+  });
 
   const updateForResult = useCallback((correct: boolean) => {
     setStats((prev) => {
@@ -59,9 +64,27 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     setSettings((prev) => ({ ...prev, autoAdvance: value }));
   }, []);
 
+  const setAutoShowHint = useCallback((value: boolean) => {
+    setSettings((prev) => ({ ...prev, autoShowHint: value }));
+  }, []);
+
   const value = useMemo(
-    () => ({ stats, settings, updateForResult, resetStats, setAutoAdvance }),
-    [stats, settings, updateForResult, resetStats, setAutoAdvance]
+    () => ({
+      stats,
+      settings,
+      updateForResult,
+      resetStats,
+      setAutoAdvance,
+      setAutoShowHint,
+    }),
+    [
+      stats,
+      settings,
+      updateForResult,
+      resetStats,
+      setAutoAdvance,
+      setAutoShowHint,
+    ]
   );
 
   return <GameContext.Provider value={value}>{children}</GameContext.Provider>;

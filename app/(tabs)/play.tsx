@@ -99,9 +99,14 @@ export default function PlayScreen() {
 
   useEffect(() => {
     setRevealMap(words.map((w) => Array(w.length).fill(false)));
-    setHintRequested(false);
+    setHintRequested(!!settings.autoShowHint);
     setWrongSinceHint(0);
-  }, [puzzle, words]);
+  }, [puzzle, words, settings.autoShowHint]);
+
+  // If user toggles autoShowHint while on screen, reflect it immediately
+  useEffect(() => {
+    if (settings.autoShowHint && !hintRequested) setHintRequested(true);
+  }, [settings.autoShowHint]);
 
   const maskText = useMemo(() => {
     if (!words.length) return "";
@@ -269,14 +274,15 @@ export default function PlayScreen() {
                 Category:{" "}
                 <ThemedText type="defaultSemiBold">{categoryLabel}</ThemedText>
               </ThemedText>
-              {words.length > 0 && wrongSinceHint >= 1 && (
-                <ThemedText>
-                  Answer pattern:{" "}
-                  <ThemedText type="defaultSemiBold" style={styles.pattern}>
-                    {maskText}
+              {words.length > 0 &&
+                (settings.autoShowHint || wrongSinceHint >= 1) && (
+                  <ThemedText>
+                    Answer pattern:{" "}
+                    <ThemedText type="defaultSemiBold" style={styles.pattern}>
+                      {maskText}
+                    </ThemedText>
                   </ThemedText>
-                </ThemedText>
-              )}
+                )}
             </ThemedView>
           </>
         )}
