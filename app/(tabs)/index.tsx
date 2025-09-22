@@ -32,6 +32,7 @@ import {
   type Puzzle,
 } from "@/utils/puzzles";
 import { Link } from "expo-router";
+import LottieView from "lottie-react-native";
 import { Confetti, type ConfettiMethods } from "react-native-fast-confetti";
 // Web fallback confetti launcher (canvas-confetti). Loaded lazily on web only.
 let webConfetti: null | ((opts?: any) => void) = null;
@@ -338,9 +339,22 @@ export default function PlayScreen() {
       ]}
     >
       <ThemedView style={styles.header}>
-        <ThemedText type="title" style={{ fontFamily: Fonts.rounded }}>
+        {/*<ThemedText type="title" style={{ fontFamily: Fonts.rounded }}>
           Guess it!
-        </ThemedText>
+        </ThemedText>*/}
+        <ThemedView style={styles.logoContainer}>
+          <LottieView
+            source={require("@/assets/animations/gaming.json")}
+            style={{
+              width: 60,
+              height: 60,
+              opacity: 1,
+            }}
+            autoPlay
+            loop={true}
+            speed={0.75}
+          />
+        </ThemedView>
         <ThemedView style={styles.headerRight}>
           <Link href="/stats" asChild>
             <TouchableOpacity
@@ -352,7 +366,7 @@ export default function PlayScreen() {
             >
               <IconSymbol
                 name="chart.bar.fill"
-                size={28}
+                size={20}
                 color={Colors[scheme].text}
               />
               <ThemedText type="defaultSemiBold">Stats</ThemedText>
@@ -533,6 +547,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
+    width: "100%",
+    height: 50,
+  },
+  logoContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "center",
+    height: 50,
   },
   headerRight: {
     flexDirection: "row",
