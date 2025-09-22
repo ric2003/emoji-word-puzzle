@@ -1,10 +1,15 @@
 import React from "react";
-import { StyleSheet, Switch, TouchableOpacity } from "react-native";
+import {
+  StyleSheet,
+  Switch,
+  TouchableOpacity,
+  useColorScheme,
+} from "react-native";
 
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
+import { Colors } from "@/constants/theme";
 import { useGame } from "@/context/game-context";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function StatsScreen() {
   const {
@@ -15,7 +20,7 @@ export default function StatsScreen() {
     setAutoShowHint,
     setConfettiEnabled,
   } = useGame();
-  const insets = useSafeAreaInsets();
+  const scheme = useColorScheme() ?? "light";
   const accuracy =
     stats.totalGuesses > 0
       ? Math.round((stats.correctCount / stats.totalGuesses) * 100)
@@ -23,7 +28,7 @@ export default function StatsScreen() {
 
   return (
     <ThemedView style={[styles.container]}>
-      <ThemedView style={styles.card}>
+      <ThemedView style={[styles.card, { borderColor: Colors[scheme].icon }]}>
         <ThemedText>Total guesses: {stats.totalGuesses}</ThemedText>
         <ThemedText>Correct: {stats.correctCount}</ThemedText>
         <ThemedText>Accuracy: {accuracy}%</ThemedText>
