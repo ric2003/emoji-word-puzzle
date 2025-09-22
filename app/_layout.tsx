@@ -90,12 +90,8 @@ export default function RootLayout() {
               options={{ headerShown: false, title: "Play" }}
             />
             <Stack.Screen
-              name="settings"
-              options={{ title: "Settings", headerBackTitle: "Play" }}
-            />
-            <Stack.Screen
               name="stats"
-              options={{ title: "Stats", headerBackTitle: "Settings" }}
+              options={{ title: "Stats", headerBackTitle: "Go Back" }}
             />
             <Stack.Screen
               name="modal"
