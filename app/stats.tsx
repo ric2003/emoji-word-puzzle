@@ -7,8 +7,14 @@ import { useGame } from "@/context/game-context";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function StatsScreen() {
-  const { stats, settings, setAutoAdvance, resetStats, setAutoShowHint } =
-    useGame();
+  const {
+    stats,
+    settings,
+    setAutoAdvance,
+    resetStats,
+    setAutoShowHint,
+    setConfettiEnabled,
+  } = useGame();
   const insets = useSafeAreaInsets();
   const accuracy =
     stats.totalGuesses > 0
@@ -34,6 +40,14 @@ export default function StatsScreen() {
       <ThemedView style={styles.row}>
         <ThemedText style={{ flex: 1 }}>Auto-show hint</ThemedText>
         <Switch value={settings.autoShowHint} onValueChange={setAutoShowHint} />
+      </ThemedView>
+
+      <ThemedView style={styles.row}>
+        <ThemedText style={{ flex: 1 }}>Confetti celebration</ThemedText>
+        <Switch
+          value={settings.confettiEnabled}
+          onValueChange={setConfettiEnabled}
+        />
       </ThemedView>
 
       <TouchableOpacity onPress={resetStats}>

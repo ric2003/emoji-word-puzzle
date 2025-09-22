@@ -1,10 +1,13 @@
 import * as Haptics from "expo-haptics";
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import {
+  Dimensions,
   Keyboard,
+  Platform,
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  View,
 } from "react-native";
 import Animated, {
   useAnimatedStyle,
@@ -29,6 +32,23 @@ import {
   type Puzzle,
 } from "@/utils/puzzles";
 import { Link } from "expo-router";
+import { Confetti, type ConfettiMethods } from "react-native-fast-confetti";
+// Web fallback confetti launcher (canvas-confetti). Loaded lazily on web only.
+let webConfetti: null | ((opts?: any) => void) = null;
+async function launchWebConfetti() {
+  if (webConfetti == null) {
+    const mod = await import("canvas-confetti");
+    webConfetti = mod.default ?? (mod as any);
+  }
+  webConfetti?.({
+    particleCount: 160,
+    spread: 90,
+    startVelocity: 45,
+    ticks: 200,
+    origin: { y: 0.2 },
+    colors: ["#ff6b6b", "#4ecdc4", "#45b7d1", "#f9ca24", "#f0932b"],
+  });
+}
 
 export default function PlayScreen() {
   const scheme = useColorScheme() ?? "light";
@@ -44,6 +64,9 @@ export default function PlayScreen() {
   const [wrongSinceHint, setWrongSinceHint] = useState(0);
   const [pendingNext, setPendingNext] = useState(false);
   const inputRef = useRef<TextInput>(null);
+  const [isKeyboardVisible, setIsKeyboardVisible] = useState(false);
+  const confettiRef = useRef<ConfettiMethods>(null);
+  const isNative = Platform.OS === "ios" || Platform.OS === "android";
 
   const shake = useSharedValue(0);
   const animatedStyle = useAnimatedStyle(() => ({
@@ -90,6 +113,20 @@ export default function PlayScreen() {
     })();
     return () => {
       cancelled = true;
+    };
+  }, []);
+
+  // Track keyboard visibility to compress bottom spacing (helps on iOS Safari)
+  useEffect(() => {
+    const showSub = Keyboard.addListener("keyboardDidShow", () =>
+      setIsKeyboardVisible(true)
+    );
+    const hideSub = Keyboard.addListener("keyboardDidHide", () =>
+      setIsKeyboardVisible(false)
+    );
+    return () => {
+      showSub.remove();
+      hideSub.remove();
     };
   }, []);
 
@@ -195,6 +232,20 @@ export default function PlayScreen() {
       if (!settings.autoAdvance) setPendingNext(true);
       if (process.env.EXPO_OS === "ios")
         Haptics.notificationAsync(Haptics.NotificationFeedbackType.Success);
+      // Celebrate with confetti when enabled
+      if (settings.confettiEnabled) {
+        if (isNative) {
+          confettiRef.current?.restart({
+            cannonsPositions: [
+              { x: 50, y: 100 },
+              { x: Dimensions.get("window").width - 50, y: 100 },
+            ],
+          });
+        } else if (Platform.OS === "web") {
+          // Web: use canvas-confetti fallback
+          launchWebConfetti();
+        }
+      }
       Keyboard.dismiss();
       // Mark current puzzle as seen on success
       if (currentIndexRef.current != null)
@@ -281,8 +332,9 @@ export default function PlayScreen() {
         styles.container,
         {
           paddingTop: insets.top + 8,
-          paddingBottom: insets.bottom + 8,
+          paddingBottom: isKeyboardVisible ? 0 : insets.bottom + 8,
         },
+        isKeyboardVisible && { gap: 8 },
       ]}
     >
       <ThemedView style={styles.header}>
@@ -385,6 +437,8 @@ export default function PlayScreen() {
           returnKeyType="send"
           autoCapitalize="words"
           autoCorrect={false}
+          onFocus={() => setIsKeyboardVisible(true)}
+          onBlur={() => setIsKeyboardVisible(false)}
         />
 
         <ThemedView style={styles.controlsButtonsRow}>
@@ -449,6 +503,21 @@ export default function PlayScreen() {
             </ThemedText>
           </ThemedView>
         </Animated.View>
+      )}
+
+      {/* Confetti overlay (native only) */}
+      {isNative && settings.confettiEnabled && (
+        <View pointerEvents="none" style={StyleSheet.absoluteFill}>
+          <Confetti
+            ref={confettiRef}
+            count={150}
+            colors={["#ff6b6b", "#4ecdc4", "#45b7d1", "#f9ca24", "#f0932b"]}
+            flakeSize={{ width: 10, height: 10 }}
+            fallDuration={5000}
+            autoplay={false}
+            isInfinite={false}
+          />
+        </View>
       )}
     </ThemedView>
   );

@@ -18,6 +18,7 @@ export type GameStats = {
 export type GameSettings = {
   autoAdvance: boolean;
   autoShowHint: boolean;
+  confettiEnabled: boolean;
 };
 
 export type GameContextValue = {
@@ -28,6 +29,7 @@ export type GameContextValue = {
   resetStats: () => void;
   setAutoAdvance: (value: boolean) => void;
   setAutoShowHint: (value: boolean) => void;
+  setConfettiEnabled: (value: boolean) => void;
 };
 
 const GameContext = createContext<GameContextValue | undefined>(undefined);
@@ -45,6 +47,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
   const [settings, setSettings] = useState<GameSettings>({
     autoAdvance: true,
     autoShowHint: true,
+    confettiEnabled: true,
   });
   const [hydrated, setHydrated] = useState(false);
 
@@ -88,6 +91,10 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
                 typeof parsed.autoShowHint === "boolean"
                   ? parsed.autoShowHint
                   : prev.autoShowHint,
+              confettiEnabled:
+                typeof parsed.confettiEnabled === "boolean"
+                  ? parsed.confettiEnabled
+                  : prev.confettiEnabled,
             }));
           } catch {
             // ignore corrupt data and keep defaults
@@ -142,6 +149,10 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
     setSettings((prev) => ({ ...prev, autoShowHint: value }));
   }, []);
 
+  const setConfettiEnabled = useCallback((value: boolean) => {
+    setSettings((prev) => ({ ...prev, confettiEnabled: value }));
+  }, []);
+
   const value = useMemo(
     () => ({
       stats,
@@ -151,6 +162,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       resetStats,
       setAutoAdvance,
       setAutoShowHint,
+      setConfettiEnabled,
     }),
     [
       stats,
@@ -160,6 +172,7 @@ export function GameProvider({ children }: { children: React.ReactNode }) {
       resetStats,
       setAutoAdvance,
       setAutoShowHint,
+      setConfettiEnabled,
     ]
   );
 

@@ -1,13 +1,16 @@
 import React from "react";
-import { StyleSheet, TouchableOpacity } from "react-native";
+import { StyleSheet, Switch, TouchableOpacity, View } from "react-native";
 
 import { ThemedText } from "@/components/themed-text";
 import { ThemedView } from "@/components/themed-view";
+import { useGame } from "@/context/game-context";
 import { Link } from "expo-router";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function SettingsScreen() {
   const insets = useSafeAreaInsets();
+  const { settings, setAutoAdvance, setAutoShowHint, setConfettiEnabled } =
+    useGame();
 
   return (
     <ThemedView
@@ -17,6 +20,24 @@ export default function SettingsScreen() {
       ]}
     >
       <ThemedText type="title">Settings</ThemedText>
+
+      <View style={styles.rowBetween}>
+        <ThemedText>Auto advance on correct</ThemedText>
+        <Switch value={settings.autoAdvance} onValueChange={setAutoAdvance} />
+      </View>
+
+      <View style={styles.rowBetween}>
+        <ThemedText>Auto show hint</ThemedText>
+        <Switch value={settings.autoShowHint} onValueChange={setAutoShowHint} />
+      </View>
+
+      <View style={styles.rowBetween}>
+        <ThemedText>Confetti celebration</ThemedText>
+        <Switch
+          value={settings.confettiEnabled}
+          onValueChange={setConfettiEnabled}
+        />
+      </View>
 
       <Link href="/stats" asChild>
         <TouchableOpacity accessibilityLabel="View stats">
@@ -38,6 +59,11 @@ const styles = StyleSheet.create({
   row: {
     flexDirection: "row",
     alignItems: "center",
+  },
+  rowBetween: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
   },
   navRow: {
     marginTop: 12,
