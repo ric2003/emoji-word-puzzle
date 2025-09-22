@@ -1162,5 +1162,162 @@
     "answer": "Levitating",
     "Category": ["Song"],
     "difficulty": "Easy"
+  },
+  {
+    "puzzle": "🦸‍♂️⚔️🦅",
+    "answer": "Deadpool & Wolverine",
+    "Category": ["Movie"],
+    "difficulty": "Medium"
+  },
+  {
+    "puzzle": "🧠🔄2️⃣",
+    "answer": "Inside Out 2",
+    "Category": ["Movie"],
+    "difficulty": "Easy"
+  },
+  {
+    "puzzle": "💀🌊",
+    "answer": "Dead Sea",
+    "Category": ["Movie"],
+    "difficulty": "Hard"
+  },
+  {
+    "puzzle": "🚀👽",
+
+    "answer": "Guardians of the Galaxy Vol. 3",
+
+    "Category": ["Movie"],
+
+    "difficulty": "Medium"
+  },
+
+  {
+    "puzzle": "🎭🔪",
+
+    "answer": "The Crow",
+
+    "Category": ["Movie"],
+
+    "difficulty": "Easy"
+  },
+
+  {
+    "puzzle": "🌋🔥",
+
+    "answer": "Lava",
+
+    "Category": ["Movie"],
+
+    "difficulty": "Easy"
+  },
+
+  {
+    "puzzle": "🧑‍🎤☕️",
+
+    "answer": "Espresso",
+
+    "Category": ["Song"],
+
+    "difficulty": "Easy"
+  },
+
+  {
+    "puzzle": "🍸💃",
+
+    "answer": "A Bar Song (Tipsy)",
+
+    "Category": ["Song"],
+
+    "difficulty": "Medium"
+  },
+
+  {
+    "puzzle": "🎸👑",
+
+    "answer": "We Didn't Start the Fire",
+
+    "Category": ["Song"],
+
+    "difficulty": "Hard"
+  },
+
+  {
+    "puzzle": "❤️🔥",
+
+    "answer": "Die With a Smile",
+
+    "Category": ["Song"],
+
+    "difficulty": "Medium"
+  },
+
+  {
+    "puzzle": "🕺💔",
+
+    "answer": "Dance Monkey",
+
+    "Category": ["Song"],
+
+    "difficulty": "Easy"
+  },
+
+  {
+    "puzzle": "🌙🚀",
+
+    "answer": "Midnights",
+
+    "Category": ["Song"],
+
+    "difficulty": "Hard"
+  },
+
+  {
+    "puzzle": "🌍🧝‍♂️",
+
+    "answer": "Genshin Impact",
+
+    "Category": ["Game"],
+
+    "difficulty": "Medium"
+  },
+
+  {
+    "puzzle": "🏰🔮3️⃣",
+
+    "answer": "Baldur's Gate 3",
+
+    "Category": ["Game"],
+
+    "difficulty": "Hard"
+  },
+
+  {
+    "puzzle": "⚔️🛡️4️⃣",
+
+    "answer": "Diablo IV",
+
+    "Category": ["Game"],
+
+    "difficulty": "Medium"
+  },
+
+  {
+    "puzzle": "🦾🤖",
+
+    "answer": "Detroit: Become Human",
+
+    "Category": ["Game"],
+
+    "difficulty": "Hard"
+  },
+
+  {
+    "puzzle": "🔫🚀2️⃣",
+
+    "answer": "Destiny 2",
+
+    "Category": ["Game"],
+
+    "difficulty": "Easy"
   }
 ]
